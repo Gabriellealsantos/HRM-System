@@ -1,0 +1,6 @@
+package com.inovals.HRMSystem.entities.enums;
+
+public enum FoulReason {
+
+    LATE_ARRIVAL, EARLY_DEPARTURE, UNAUTHORIZED_BREAK, ABSENCE_WITHOUT_NOTICE, UNAUTHORIZED_ABSENCE, OTHER;
+}
