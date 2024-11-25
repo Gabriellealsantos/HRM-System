@@ -1,6 +1,6 @@
 package com.inovals.HRMSystem.entities.enums;
 
-public enum VacationStatus {
+public enum VocationStatus {
 
     PENDING, APPROVED, REJECTED;
 }

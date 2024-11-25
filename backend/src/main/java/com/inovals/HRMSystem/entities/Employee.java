@@ -2,10 +2,16 @@ package com.inovals.HRMSystem.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
+/**
+ * Representa um funcionário no sistema HRM.
+ *
+ * Contém informações pessoais, como nome e salário,
+ * além de relacionamentos com registros de trabalho, documentos e férias.
+ */
 @Entity
 @Table(name = "tb_employee")
 public class Employee {
@@ -13,18 +19,27 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
-    private Date dateAdmission;
+
+    private LocalDate dateAdmission;
+
     private Integer salary;
 
-    @OneToMany(mappedBy = "employee")
+    @OneToMany(mappedBy = "employee", fetch = FetchType.LAZY)
     private List<WorkRecord> workRecords = new ArrayList<>();
 
+
+    @OneToMany(mappedBy = "employee", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Document> documents = new ArrayList<>();
+
+    @OneToMany(mappedBy = "employee", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Vocation> vocations = new ArrayList<>();
 
     public Employee() {
     }
 
-    public Employee(Long id, String name, Date dateAdmission, Integer salary) {
+    public Employee(Long id, String name, LocalDate dateAdmission, Integer salary) {
         this.id = id;
         this.name = name;
         this.dateAdmission = dateAdmission;
@@ -47,11 +62,11 @@ public class Employee {
         this.name = name;
     }
 
-    public Date getDateAdmission() {
+    public LocalDate getDateAdmission() {
         return dateAdmission;
     }
 
-    public void setDateAdmission(Date dateAdmission) {
+    public void setDateAdmission(LocalDate dateAdmission) {
         this.dateAdmission = dateAdmission;
     }
 
@@ -66,4 +81,9 @@ public class Employee {
     public List<WorkRecord> getWorkRecords() {
         return workRecords;
     }
+
+    public List<Document> getDocuments() {
+        return documents;
+    }
+
 }

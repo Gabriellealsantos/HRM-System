@@ -7,6 +7,11 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Representa um registro de trabalho de um funcionário no sistema HRM.
+ *
+ * Contém informações sobre horas trabalhadas, datas e o funcionário relacionado.
+ */
 @Entity
 @Table(name = "tb_work_record")
 public class WorkRecord {

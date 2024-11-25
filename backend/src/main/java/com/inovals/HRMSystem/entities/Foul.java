@@ -5,6 +5,11 @@ import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
+/**
+ * Representa uma falta ou penalidade associada a um funcionário no sistema HRM.
+ *
+ * Contém informações como motivo, data e o funcionário relacionado.
+ */
 @Entity
 @Table(name = "tb_foul")
 public class Foul {
