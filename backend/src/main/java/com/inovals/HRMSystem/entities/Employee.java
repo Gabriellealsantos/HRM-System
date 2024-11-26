@@ -44,6 +44,9 @@ public class Employee {
     @JoinColumn(name = "department_id")
     private Department department;
 
+    @OneToOne(mappedBy = "employee", cascade = CascadeType.ALL)
+    private User user;
+
     public Employee() {
     }
 
@@ -108,5 +111,13 @@ public class Employee {
 
     public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
