@@ -12,7 +12,7 @@ import java.time.LocalDate;
  */
 @Entity
 @Table(name = "tb_vocation")
-public class Vocation {
+public class Vacation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,10 +28,10 @@ public class Vocation {
     @JoinColumn(name = "employee_id")
     private Employee employee;
 
-    public Vocation() {
+    public Vacation() {
     }
 
-    public Vocation(Long id, LocalDate startDate, LocalDate endDate, VocationStatus status, Employee employee) {
+    public Vacation(Long id, LocalDate startDate, LocalDate endDate, VocationStatus status, Employee employee) {
         this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;

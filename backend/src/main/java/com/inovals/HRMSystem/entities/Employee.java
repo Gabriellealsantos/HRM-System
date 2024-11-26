@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * Representa um funcionário no sistema HRM.
- *
+ * <p>
  * Contém informações pessoais, como nome e salário,
  * além de relacionamentos com registros de trabalho, documentos e férias.
  */
@@ -34,7 +34,15 @@ public class Employee {
     private List<Document> documents = new ArrayList<>();
 
     @OneToMany(mappedBy = "employee", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Vocation> vocations = new ArrayList<>();
+    private List<Vacation> vacations = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "job_title_id")
+    private JobTitle jobTitle;
+
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
 
     public Employee() {
     }
@@ -86,4 +94,19 @@ public class Employee {
         return documents;
     }
 
+    public JobTitle getJobTitle() {
+        return jobTitle;
+    }
+
+    public void setJobTitle(JobTitle jobTitle) {
+        this.jobTitle = jobTitle;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 }
