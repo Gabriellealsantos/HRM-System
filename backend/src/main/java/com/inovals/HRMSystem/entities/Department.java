@@ -5,6 +5,12 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Representa um departamento no sistema HRM.
+ *
+ * Contém informações como nome, descrição e o chefe do departamento.
+ * Além disso, mantém o relacionamento com os funcionários alocados no departamento.
+ */
 @Entity
 @Table(name = "tb_department")
 public class Department {

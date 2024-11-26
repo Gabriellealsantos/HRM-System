@@ -11,7 +11,7 @@ import java.time.LocalDate;
  * Contém informações como data de início, data de término e status das férias.
  */
 @Entity
-@Table(name = "tb_vocation")
+@Table(name = "tb_vacation")
 public class Vacation {
 
     @Id

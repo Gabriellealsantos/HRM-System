@@ -4,6 +4,12 @@ import jakarta.persistence.*;
 
 import java.util.Objects;
 
+/**
+ * Representa um papel ou função atribuída a um usuário no sistema HRM.
+ *
+ * Cada papel define um conjunto de permissões ou responsabilidades.
+ * Exemplo: ADMIN, RH.
+ */
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "tb_role")

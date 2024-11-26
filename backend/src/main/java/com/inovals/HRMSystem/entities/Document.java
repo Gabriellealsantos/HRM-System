@@ -16,8 +16,8 @@ public class Document {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String type;
-    private String url;
+    private String documentName;
+    private String documentUrl;
     private LocalDate dateIssuance;
 
     @ManyToOne
@@ -27,10 +27,10 @@ public class Document {
     public Document() {
     }
 
-    public Document(Long id, String type, String url, LocalDate dateIssuance, Employee employee) {
+    public Document(Long id, String documentName, String documentUrl, LocalDate dateIssuance, Employee employee) {
         this.id = id;
-        this.type = type;
-        this.url = url;
+        this.documentName = documentName;
+        this.documentUrl = documentUrl;
         this.dateIssuance = dateIssuance;
         this.employee = employee;
     }
@@ -43,12 +43,12 @@ public class Document {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
+    public String getDocumentName() {
+        return documentName;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setDocumentName(String documentName) {
+        this.documentName = documentName;
     }
 
     public LocalDate getDateIssuance() {
@@ -59,12 +59,12 @@ public class Document {
         this.dateIssuance = dateIssuance;
     }
 
-    public String getUrl() {
-        return url;
+    public String getDocumentUrl() {
+        return documentUrl;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setDocumentUrl(String documentUrl) {
+        this.documentUrl = this.documentUrl;
     }
 
     public Employee getEmployee() {

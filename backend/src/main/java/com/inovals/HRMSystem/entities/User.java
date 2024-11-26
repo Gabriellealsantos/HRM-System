@@ -5,6 +5,13 @@ import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Representa um usuário no sistema HRM.
+ *
+ * Contém credenciais de acesso (e-mail e senha) e informações adicionais,
+ * como sexo e URL de imagem de perfil. Cada usuário está associado a um
+ * funcionário e pode ter múltiplos papéis atribuídos.
+ */
 @Entity
 @Table(name = "tb_user")
 public class User {
