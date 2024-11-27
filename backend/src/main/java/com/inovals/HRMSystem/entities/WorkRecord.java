@@ -31,11 +31,9 @@ public class WorkRecord {
     @OneToMany(mappedBy = "workRecord")
     private List<Foul> fouls = new ArrayList<>();
 
-    // Construtor vazio
     public WorkRecord() {
     }
 
-    // Construtor com parâmetros
     public WorkRecord(Long id, LocalDate workDate, LocalTime entryTime, LocalTime exitTime) {
         this.id = id;
         this.workDate = workDate;

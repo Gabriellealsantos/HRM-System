@@ -97,6 +97,10 @@ public class Employee {
         return documents;
     }
 
+    public List<Vacation> getVacations() {
+        return vacations;
+    }
+
     public JobTitle getJobTitle() {
         return jobTitle;
     }
