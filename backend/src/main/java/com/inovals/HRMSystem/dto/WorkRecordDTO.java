@@ -32,7 +32,7 @@ public class WorkRecordDTO {
     public WorkRecordDTO(WorkRecord entity) {
         // Chama o construtor anterior
         this(entity.getId(), entity.getWorkDate(), entity.getEntryTime(), entity.getExitTime(), new EmployeeDTO(entity.getEmployee()));
-        
+
         // Preenche as listas
         for (Foul foul : entity.getFouls()) {
             foulDTOS.add(new FoulDTO(foul));

@@ -1,11 +1,6 @@
 package com.inovals.HRMSystem.dto;
 
 import com.inovals.HRMSystem.entities.Department;
-import com.inovals.HRMSystem.entities.Employee;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class DepartmentDTO {
 
@@ -14,8 +9,6 @@ public class DepartmentDTO {
     private String name;
     private String description;
     private String headDepartment;
-
-    private List<EmployeeDTO> employeeDTOS = new ArrayList<>();
 
     public DepartmentDTO(Long id, String name, String description, String headDepartment) {
         this.id = id;
@@ -27,11 +20,6 @@ public class DepartmentDTO {
     public DepartmentDTO(Department entity) {
         // Chama o construtor anterior
         this(entity.getId(), entity.getName(), entity.getDescription(), entity.getHeadDepartment());
-
-        // Preenche a lista
-        for (Employee employee : entity.getEmployees()) {
-            employeeDTOS.add(new EmployeeDTO(employee));
-        }
     }
 
     public Long getId() {
@@ -66,7 +54,4 @@ public class DepartmentDTO {
         this.headDepartment = headDepartment;
     }
 
-    public List<EmployeeDTO> getEmployeeDTOS() {
-        return Collections.unmodifiableList(employeeDTOS);
-    }
 }
